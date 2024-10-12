@@ -26,6 +26,24 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
+
+        hm: hm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <4 3>;
+        };
     };
 
     keymap {
@@ -41,10 +59,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G          &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&td0       &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &lt 3 SPACE    &lt 3 ENTER  &mo 2  &kp RALT
+&kp TAB    &kp Q  &kp W       &kp E           &kp R           &kp T          &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &hm LALT S  &kp D           &kp F           &kp G          &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&td0       &kp Z  &kp X       &kp C           &kp V           &kp B          &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                              &mt LCTRL CAPS  &kp LEFT_SHIFT  &lt 1 SPACE    &lt 2 ENTER  &mo 2  &kp RALT
             >;
         };
 
@@ -58,10 +76,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp N1           &kp N2          &kp UP_ARROW  &kp N4           &kp N5             &kp N6        &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &bt BT_CLR_ALL   &kp LEFT        &kp DOWN      &kp RIGHT_ARROW  &bt BT_SEL 3       &kp LEFT      &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
-&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans           &rgb_ug RGB_EFF    &kp NUMBER_1  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
-                                         &trans        &trans           &trans             &kp INS       &kp DEL          &trans
+&trans  &kp N1           &kp N2      &kp UP_ARROW  &kp N4           &kp N5             &kp N7        &kp N8        &kp N9        &kp N9           &kp N0    &kp BSPC
+&trans  &bt BT_CLR_ALL   &kp LEFT    &kp DOWN      &kp RIGHT_ARROW  &bt BT_SEL 3       &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp RIGHT        &kp HOME  &kp PG_UP
+&trans  &rgb_ug RGB_OFF  &bt BT_PRV  &bt BT_NXT    &trans           &rgb_ug RGB_EFF    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
+                                     &trans        &trans           &trans             &kp INS       &kp N0        &kp KP_DOT
             >;
         };
 
