@@ -58,7 +58,7 @@
 
         backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <4 3>;
+            key-positions = <4 5>;
         };
 
         del {
@@ -85,15 +85,15 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W       &kp E           &kp R      &kp T          &kp Y        &kp U          &kp I      &kp O    &kp P              &kp BSPC
-&kp LCTRL  &kp A  &hm LALT S  &kp D           &kp F      &kp G          &kp H        &kp J          &kp K      &kp L    &as LS(SEMI) SEMI  &kp SQT
-&td0       &kp Z  &kp X       &kp C           &kp V      &kp B          &kp N        &kp M          &kp COMMA  &kp DOT  &kp FSLH           &kp ESC
-                              &mt LCTRL CAPS  &shiftwin  &lt 1 SPACE    &lt 2 ENTER  &kp BACKSPACE  &kp RALT
+&kp TAB    &kp Q  &kp W       &kp E           &kp R      &kp T          &kp Y            &kp U        &kp I                &kp O            &kp P              &kp BSPC
+&kp LCTRL  &kp A  &hm LALT S  &kp D           &kp F      &kp G          &kp H            &kp J        &kp K                &kp L            &as LS(SEMI) SEMI  &kp SQT
+&td0       &kp Z  &kp X       &kp C           &kp V      &kp B          &kp N            &kp M        &as LS(COMMA) COMMA  &as LS(DOT) DOT  &as LS(FSLH) FSLH  &kp ESC
+                              &mt LCTRL CAPS  &shiftwin  &lt 1 SPACE    &lt 2 BACKSPACE  &lt 3 ENTER  &kp RALT
             >;
         };
 
         lower_layer {
-            display-name = "NUMBER";
+            display-name = "left/number";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
@@ -102,10 +102,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans       &kp ESCAPE       &kp N2      &kp UP_ARROW  &kp N4           &kp N5             &kp N7        &kp N8         &kp N9        &kp MINUS     &kp EQUAL     &kp BSPC
-&bootloader  &bt BT_CLR_ALL   &kp LEFT    &kp DOWN      &kp RIGHT_ARROW  &bt BT_SEL 3       &kp NUMBER_4  &kp N5         &kp NUMBER_6  &kp PLUS      &kp KP_ENTER  &kp PG_UP
-&trans       &rgb_ug RGB_OFF  &bt BT_PRV  &bt BT_NXT    &trans           &rgb_ug RGB_EFF    &kp NUMBER_1  &as LS(N2) N2  &kp NUMBER_3  &kp ASTERISK  &kp SLASH     &kp PG_DN
-                                          &trans        &trans           &trans             &trans        &kp N0         &kp KP_DOT
+&trans       &kp ESCAPE       &kp DOLLAR  &kp UP_ARROW  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp N7                     &kp N8         &kp N9               &kp MINUS     &kp EQUAL     &kp BSPC
+&bootloader  &bt BT_CLR_ALL   &kp LEFT    &kp DOWN      &kp RIGHT_ARROW       &bt BT_SEL 3             &as LS(N4) N4              &kp N5         &kp NUMBER_6         &kp PLUS      &kp KP_ENTER  &kp PG_UP
+&trans       &rgb_ug RGB_OFF  &bt BT_PRV  &bt BT_NXT    &trans                &rgb_ug RGB_EFF          &as LS(NUMBER_1) NUMBER_1  &as LS(N2) N2  &as LS(NUMBER_3) N3  &kp ASTERISK  &kp SLASH     &kp PG_DN
+                                          &trans        &trans                &trans                   &trans                     &kp N0         &kp KP_DOT
             >;
         };
 
@@ -119,20 +119,20 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL       &kp AT             &kp HASH      &kp DLLR              &kp PRCNT            &kp CARET  &kp AMPS  &kp UP    &kp LPAR   &kp RPAR  &kp BSPC
-&trans  &kp SEMICOLON  &kp DOUBLE_QUOTES  &kp QUESTION  &kp LEFT_BRACKET      &kp RIGHT_BRACKET    &kp MINUS  &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSLH  &bootloader
-&trans  &kp COLON      &kp SQT            &kp SLASH     &kp NON_US_BACKSLASH  &kp PIPE             &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC   &kp PIPE  &kp TILDE
-                                          &trans        &trans                &trans               &trans     &trans    &trans
+&trans  &kp N1         &kp N2             &kp N3        &kp N4                &kp N5               &kp CARET        &kp AMPS    &kp UP    &kp LPAR   &kp RPAR  &kp BSPC
+&trans  &kp SEMICOLON  &kp DOUBLE_QUOTES  &kp QUESTION  &kp LEFT_BRACKET      &kp RIGHT_BRACKET    &kp LS(MINUS)    &kp LEFT    &kp DOWN  &kp RIGHT  &kp BSLH  &bootloader
+&trans  &kp COLON      &kp SQT            &kp SLASH     &kp NON_US_BACKSLASH  &kp PIPE             &kp EXCLAMATION  &kp LS(N6)  &kp LBRC  &kp RBRC   &kp PIPE  &kp TILDE
+                                          &trans        &trans                &trans               &trans           &trans      &trans
             >;
         };
 
         layer_3 {
             display-name = "Fn";
             bindings = <
-&trans  &kp F1  &kp F2  &kp F3  &kp F4      &kp F5         &kp F6       &kp F7  &kp F8  &kp F9  &kp F10          &kp F11
-&trans  &trans  &trans  &trans  &sys_reset  &bootloader    &bootloader  &trans  &trans  &trans  &kp PRINTSCREEN  &kp F12
-&trans  &trans  &trans  &trans  &trans      &trans         &trans       &trans  &trans  &trans  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                        &trans  &trans      &trans         &trans       &trans  &trans
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans         &trans       &kp F7  &kp F8  &kp F9  &kp F10          &kp F11
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &bootloader    &bootloader  &trans  &trans  &trans  &kp PRINTSCREEN  &kp F12
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans         &trans       &trans  &trans  &trans  &kp SCROLLLOCK   &kp PAUSE_BREAK
+                         &trans   &trans   &trans         &trans       &trans  &trans
             >;
         };
     };
