@@ -40,10 +40,10 @@
             compatible = "zmk,behavior-hold-tap";
             label = "AUTOSHIFT_HOLD_TAP";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <160>;
             bindings = <&shifted>, <&kp>;
 
-            flavor = "balanced";
+            flavor = "tap-preferred";
         };
 
         tpshiftwin: tpshiftwin {
@@ -57,7 +57,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TPALTLAYER3";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT>, <&lt 3 LEFT_ALT>;
+            bindings = <&kp LEFT_ALT>, <&to 3>;
         };
     };
 
@@ -147,10 +147,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp ESCAPE       &kp DOLLAR  &kp UP      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL     &kp BSPC
-&trans  &bt BT_CLR_ALL   &kp LEFT    &kp DOWN    &kp RIGHT             &bt BT_SEL 3             &as N4  &as N5  &as N6      &as EQUAL  &kp HOME      &kp PG_UP
-&trans  &rgb_ug RGB_OFF  &bt BT_PRV  &bt BT_NXT  &trans                &rgb_ug RGB_EFF          &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_SLASH  &kp PG_DN
-                                     &trans      &trans                &trans                   &trans  &as N0  &kp KP_DOT
+&trans       &kp ESCAPE      &kp DOLLAR  &kp UP      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp BSPC
+&bootloader  &tog 4          &kp LEFT    &kp DOWN    &kp RIGHT             &bt BT_SEL 3             &as N4  &as N5  &as N6      &as EQUAL  &kp HOME       &kp PG_UP
+&trans       &bt BT_CLR_ALL  &bt BT_PRV  &bt BT_NXT  &trans                &rgb_ug RGB_EFF          &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
+                                         &trans      &trans                &trans                   &trans  &as N0  &kp KP_DOT
             >;
         };
 
@@ -178,6 +178,15 @@
 &trans  &kp F5  &kp F6   &kp F7   &kp F8   &out OUT_USB       &kp DOLLAR       &kp PRCNT     &kp CARET             &trans  &kp PRINTSCREEN  &kp F12
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &out OUT_BLE       &kp EXCLAMATION  &kp AT_SIGN   &kp HASH              &trans  &kp SCROLLLOCK   &kp PAUSE_BREAK
                          &trans   &trans   &trans             &trans           &trans        &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &kp MINUS     &kp EQUAL      &kp N1  &kp N2      &kp N3    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &tog 4        &trans         &kp N4  &kp N5      &kp N6    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp ASTERISK  &kp KP_DIVIDE  &kp N7  &kp N8      &kp N9    &trans  &trans  &trans  &trans  &trans  &trans
+                                     &kp N0  &kp KP_DOT  &trans    &trans  &trans  &trans
             >;
         };
     };
