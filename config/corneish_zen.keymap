@@ -35,8 +35,41 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+       as_ht: autoshift_hold_tap {
+        compatible = "zmk,behavior-hold-tap";
+       label = "AUTOSHIFT_HOLD_TAP";
+       #binding-cells = <2>;
+       tapping-term-ms = <200>;
+       bindings = <&shifted>, <&kp>;
+        };
+    };
+ macros {
+    shifted: macro_shifted_kp {
+      #binding-cells = <1>;
+      label = "MACRO_SHIFTED_KP";
+      compatible = "zmk,behavior-macro-one-param";
+      bindings =
+        <&macro_press &kp LSHFT>,
+        <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>,
+        <&macro_release &kp LSHFT>;
     };
 
+    as: autoshift {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      label = "AUTOSHIFT_KP";
+      bindings =
+        <&macro_press>,
+        <&macro_param_1to1>,
+        <&macro_param_1to2>,
+        <&as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>,
+        <&macro_pause_for_release>,
+        <&macro_release>,
+        <&macro_param_1to1>,
+        <&macro_param_1to2>,
+        <&as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
+    };
+  };
     keymap {
         compatible = "zmk,keymap";
 
@@ -50,10 +83,11 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R                  &kp T          &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F                  &kp G          &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&td0       &kp Z  &kp X  &kp C     &kp V                  &kp B          &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+&kp TAB    &as Q  &as W  &as E     &as R                  &as T          &as Y        &as U  &as I      &as O    &as P     &kp BSPC
+&kp LCTRL  &as A  &as S  &as D     &as F                  &as G          &as H        &as J  &as K      &as L    &as SEMI  &as SQT
+&td0       &as Z  &as X  &as C     &as V                  &as B          &as N        &as M  &as COMMA  &as DOT  &as FSLH  &kp ESC
                          &kp LGUI  &mt LEFT_CONTROL CAPS  &lt 3 SPACE    &lt 3 ENTER  &mo 2  &kp RALT
+
             >;
         };
 
@@ -67,9 +101,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5             &kp N6    &kp N7    &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &kp LEFT  &kp DOWN  &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
-&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF    &kp N1    &kp N2    &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
+&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5             &as N7    &as N8    &as N9           &kp N9           &kp N0    &kp BSPC
+&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &as N4   &as N5   &as N6           &kp RIGHT        &kp HOME  &kp PG_UP
+&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF    &as N1    &as N2   &as N3  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
                                          &trans        &trans        &trans             &kp INS   &kp DEL   &trans
             >;
         };
