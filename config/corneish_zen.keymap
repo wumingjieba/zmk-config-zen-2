@@ -110,6 +110,11 @@
             bindings = <&kp ENTER>;
             key-positions = <38 16>;
         };
+
+        alttab {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <13 36>;
+        };
     };
 
     keymap {
