@@ -34,6 +34,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            flavor = "balanced";
         };
 
         as_ht: autoshift_hold_tap {
@@ -57,7 +58,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TPALTLAYER3";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT>, <&to 3>;
+            bindings = <&kp LEFT_ALT>, <&mo 3>;
+        };
+
+        tdlayer4: tdlayer4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDLAYER4";
+            #binding-cells = <0>;
+            bindings = <&trans>, <&tog 4>;
         };
     };
 
@@ -115,6 +123,11 @@
             bindings = <&kp LA(TAB)>;
             key-positions = <13 36>;
         };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <38 15>;
+        };
     };
 
     keymap {
@@ -148,7 +161,7 @@
 
             bindings = <
 &trans       &kp ESCAPE      &kp DOLLAR  &kp UP      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp BSPC
-&bootloader  &tog 4          &kp LEFT    &kp DOWN    &kp RIGHT             &bt BT_SEL 3             &as N4  &as N5  &as N6      &as EQUAL  &kp HOME       &kp PG_UP
+&bootloader  &tdlayer4       &kp LEFT    &kp DOWN    &kp RIGHT             &bt BT_SEL 3             &as N4  &as N5  &as N6      &as EQUAL  &kp HOME       &kp PG_UP
 &trans       &bt BT_CLR_ALL  &bt BT_PRV  &bt BT_NXT  &trans                &rgb_ug RGB_EFF          &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
                                          &trans      &trans                &trans                   &trans  &as N0  &kp KP_DOT
             >;
