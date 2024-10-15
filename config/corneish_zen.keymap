@@ -151,7 +151,7 @@
         };
 
         lower_layer {
-            display-name = "NUMBER";
+            display-name = "NUMBER-right";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
@@ -160,10 +160,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans       &kp ESCAPE      &kp DOLLAR  &kp UP      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp BSPC
-&bootloader  &tdlayer4       &kp LEFT    &kp DOWN    &kp RIGHT             &bt BT_SEL 3             &as N4  &as N5  &as N6      &as EQUAL  &kp HOME       &kp PG_UP
-&trans       &bt BT_CLR_ALL  &bt BT_PRV  &bt BT_NXT  &trans                &rgb_ug RGB_EFF          &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
-                                         &trans      &trans                &trans                   &trans  &as N0  &kp KP_DOT
+&trans       &kp ESCAPE  &kp DOLLAR    &kp UP        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
+&bootloader  &tdlayer4   &kp LEFT      &kp DOWN      &kp RIGHT             &trans                   &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
+&trans       &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3          &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
+                                       &trans        &trans                &trans                   &trans  &as N0  &kp KP_DOT
             >;
         };
 
@@ -177,7 +177,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL       &kp AT             &kp HASH      &kp DLLR          &kp PRCNT            &kp GRAVE        &kp TILDE  &kp UP    &as MINUS  &as EQUAL  &trans
+&trans  &as N1         &as N2             &as N3        &as N4            &as N5               &kp GRAVE        &kp TILDE  &kp UP    &as MINUS  &as EQUAL  &trans
 &trans  &kp SEMICOLON  &kp DOUBLE_QUOTES  &kp QUESTION  &as LEFT_BRACKET  &as RIGHT_BRACKET    &kp UNDERSCORE   &kp LEFT   &kp DOWN  &kp RIGHT  &trans     &bootloader
 &trans  &kp COLON      &kp SQT            &kp SLASH     &kp BACKSLASH     &kp PIPE             &kp EXCLAMATION  &kp CARET  &kp LBRC  &kp RBRC   &trans     &trans
                                           &trans        &trans            &trans               &trans           &trans     &trans
@@ -185,10 +185,10 @@
         };
 
         layer_3 {
-            display-name = "Fn";
+            display-name = "Fn&Num Symbol";
             bindings = <
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &rgb_ug RGB_OFF    &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp F9  &kp F10          &kp F11
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &out OUT_USB       &kp DOLLAR       &kp PRCNT     &kp CARET             &trans  &kp PRINTSCREEN  &kp F12
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &rgb_ug RGB_OFF    &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &trans  &trans           &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &out OUT_USB       &kp DOLLAR       &kp PRCNT     &kp CARET             &trans  &kp PRINTSCREEN  &trans
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &out OUT_BLE       &kp EXCLAMATION  &kp AT_SIGN   &kp HASH              &trans  &kp SCROLLLOCK   &kp PAUSE_BREAK
                          &trans   &trans   &trans             &trans           &trans        &trans
             >;
@@ -201,6 +201,8 @@
 &trans  &kp ASTERISK  &kp KP_DIVIDE  &kp N7  &kp N8      &kp N9    &trans  &trans  &trans  &trans  &trans  &trans
                                      &kp N0  &kp KP_DOT  &trans    &trans  &trans  &trans
             >;
+
+            label = "Keypad-left";
         };
     };
 };
