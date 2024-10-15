@@ -67,6 +67,13 @@
             #binding-cells = <0>;
             bindings = <&trans>, <&tog 4>;
         };
+
+        tpbl: tpbl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TPBL";
+            #binding-cells = <0>;
+            bindings = <&none>, <&bootloader>;
+        };
     };
 
     macros {
@@ -145,7 +152,7 @@
 
             bindings = <
 &kp ESCAPE  &as Q  &as W           &as E        &as R                  &as T          &as Y        &as U          &as I         &as O    &as P     &kp BSPC
-&kp LCTRL   &as A  &hm LEFT_ALT S  &as D        &as F                  &as G          &as H        &as J          &as K         &as L    &as SEMI  &as SQT
+&kp LCTRL   &as A  &hm LEFT_ALT S  &as D        &as F                  &as G          &as H        &as J          &as K         &as L    &as SEMI  &tpbl
 &td0        &as Z  &as X           &as C        &as V                  &as B          &as N        &as M          &as COMMA     &as DOT  &as FSLH  &kp ESC
                                    &tpshiftwin  &mt LEFT_CONTROL CAPS  &lt 1 SPACE    &lt 2 ENTER  &kp BACKSPACE  &tpaltlayer3
             >;
