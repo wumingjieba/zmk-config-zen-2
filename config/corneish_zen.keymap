@@ -119,14 +119,9 @@
             key-positions = <38 16>;
         };
 
-        alttab {
-            bindings = <&kp LA(TAB)>;
-            key-positions = <13 36>;
-        };
-
         tab {
             bindings = <&kp TAB>;
-            key-positions = <15 37>;
+            key-positions = <15 38>;
         };
     };
 
