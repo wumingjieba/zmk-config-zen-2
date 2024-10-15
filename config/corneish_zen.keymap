@@ -155,10 +155,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans       &kp ESCAPE  &kp DOLLAR    &kp UP        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
-&bootloader  &tdlayer4   &kp LEFT      &kp DOWN      &kp RIGHT             &trans                   &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
-&trans       &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2          &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
-                                       &trans        &trans                &trans                   &trans  &as N0  &kp KP_DOT
+&trans          &kp ESCAPE  &kp DOLLAR    &kp UP        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
+&bootloader     &tdlayer4   &kp LEFT      &kp DOWN      &kp RIGHT             &trans                   &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
+&bt BT_CLR_ALL  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2          &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
+                                          &trans        &trans                &trans                   &trans  &as N0  &kp KP_DOT
             >;
         };
 
