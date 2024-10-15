@@ -197,13 +197,22 @@
 
         layer_4 {
             bindings = <
-&trans  &kp MINUS     &kp EQUAL      &kp N7  &kp N8      &kp N9    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &tog 4        &kp PLUS       &kp N4  &kp N5      &kp N6    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp ASTERISK  &kp KP_DIVIDE  &kp N1  &kp N2      &kp N3    &trans  &trans  &trans  &trans  &trans  &trans
-                                     &kp N0  &kp KP_DOT  &trans    &trans  &trans  &trans
+&trans  &kp MINUS     &kp EQUAL      &kp N7  &kp N8      &kp N9         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &tog 4        &kp PLUS       &kp N4  &kp N5      &kp N6         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp ASTERISK  &kp KP_DIVIDE  &kp N1  &kp N2      &kp N3         &trans  &trans  &trans  &trans  &trans  &trans
+                                     &kp N0  &kp KP_DOT  &lt 5 SPACE    &trans  &trans  &trans
             >;
 
             label = "Keypad-left";
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans     &trans     &kp UP          &trans     &kp LC(Y)    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(A)  &kp LEFT   &kp DOWN_ARROW  &kp RIGHT  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)       &kp LC(V)  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+                              &trans          &trans     &trans       &trans  &trans  &trans
+            >;
         };
     };
 };
