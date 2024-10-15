@@ -123,6 +123,11 @@
             bindings = <&kp TAB>;
             key-positions = <15 37>;
         };
+
+        escape-left {
+            bindings = <&kp ESCAPE>;
+            key-positions = <1 38>;
+        };
     };
 
     keymap {
