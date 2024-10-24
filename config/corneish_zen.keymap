@@ -47,16 +47,16 @@
             flavor = "tap-preferred";
         };
 
-        tpshiftwin: tpshiftwin {
+        tdshiftwin: tdshiftwin {
             compatible = "zmk,behavior-tap-dance";
-            label = "TPSHIFTWIN";
+            label = "TDSHIFTWIN";
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp LEFT_WIN>;
         };
 
-        tpaltlayer3: tpaltlayer3 {
+        tdaltlayer3: tdaltlayer3 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TPALTLAYER3";
+            label = "TDALTLAYER3";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT>, <&mo 3>;
         };
@@ -68,11 +68,18 @@
             bindings = <&trans>, <&tog 4>;
         };
 
-        tpbl: tpbl {
+        tdbl: tdbl {
             compatible = "zmk,behavior-tap-dance";
-            label = "TPBL";
+            label = "TDBL";
             #binding-cells = <0>;
             bindings = <&none>, <&bootloader>;
+        };
+
+        tdblueclear: tdblueclear {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDBLUECLEAR";
+            #binding-cells = <0>;
+            bindings = <&trans>, <&bt BT_CLR>;
         };
     };
 
@@ -109,7 +116,7 @@
         bsp-left {
             bindings = <&kp BACKSPACE>;
             key-positions = <4 3>;
-            timeout-ms = <40>;
+            timeout-ms = <30>;
         };
 
         delete-left {
@@ -152,9 +159,9 @@
 
             bindings = <
 &kp ESCAPE  &as Q  &as W           &as E        &as R                  &as T          &as Y        &as U          &as I         &as O    &as P     &kp BSPC
-&kp LCTRL   &as A  &hm LEFT_ALT S  &as D        &as F                  &as G          &as H        &as J          &as K         &as L    &as SEMI  &tpbl
+&kp LCTRL   &as A  &hm LEFT_ALT S  &as D        &as F                  &as G          &as H        &as J          &as K         &as L    &as SEMI  &tdbl
 &td0        &as Z  &as X           &as C        &as V                  &as B          &as N        &as M          &as COMMA     &as DOT  &as FSLH  &kp ESC
-                                   &tpshiftwin  &mt LEFT_CONTROL CAPS  &lt 1 SPACE    &lt 2 ENTER  &kp BACKSPACE  &tpaltlayer3
+                                   &tdshiftwin  &mt LEFT_CONTROL CAPS  &lt 1 SPACE    &lt 2 ENTER  &kp BACKSPACE  &tdaltlayer3
             >;
         };
 
@@ -168,10 +175,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans          &kp ESCAPE  &kp DOLLAR    &kp UP        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
-&bootloader     &tdlayer4   &kp LEFT      &kp DOWN      &kp RIGHT             &trans                   &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
-&bt BT_CLR_ALL  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2          &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
-                                          &trans        &trans                &trans                   &trans  &as N0  &kp KP_DOT
+&trans       &kp ESCAPE    &kp DOLLAR    &kp UP        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
+&bootloader  &tdlayer4     &kp LEFT      &kp DOWN      &kp RIGHT             &trans                   &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
+&trans       &tdblueclear  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2          &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
+                                         &trans        &trans                &trans                   &trans  &as N0  &kp KP_DOT
             >;
         };
 
@@ -186,8 +193,8 @@
 
             bindings = <
 &trans  &as N1         &as N2             &as N3        &as N4            &as N5               &kp GRAVE        &kp TILDE  &kp UP    &as MINUS  &as EQUAL  &trans
-&trans  &kp SEMICOLON  &kp DOUBLE_QUOTES  &kp QUESTION  &as LEFT_BRACKET  &as RIGHT_BRACKET    &kp UNDERSCORE   &kp LEFT   &kp DOWN  &kp RIGHT  &trans     &bootloader
-&trans  &kp COLON      &kp SQT            &kp SLASH     &kp BACKSLASH     &kp PIPE             &kp EXCLAMATION  &kp CARET  &kp LBRC  &kp RBRC   &trans     &trans
+&trans  &kp SEMICOLON  &kp DOUBLE_QUOTES  &kp QUESTION  &as LEFT_BRACKET  &as RIGHT_BRACKET    &kp UNDERSCORE   &kp LEFT   &kp DOWN  &kp RIGHT  &kp HOME   &bootloader
+&trans  &kp COLON      &kp SQT            &kp SLASH     &kp BACKSLASH     &kp PIPE             &kp EXCLAMATION  &kp CARET  &kp LBRC  &kp RBRC   &kp END    &trans
                                           &trans        &trans            &trans               &trans           &trans     &trans
             >;
         };
@@ -215,10 +222,10 @@
 
         layer_5 {
             bindings = <
-&trans  &trans     &trans     &kp UP          &trans     &kp LC(Y)    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(A)  &kp LEFT   &kp DOWN_ARROW  &kp RIGHT  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)       &kp LC(V)  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-                              &trans          &trans     &trans       &trans  &trans  &trans
+&trans  &trans     &kp DOLLAR  &kp UP          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &rgb_ug RGB_TOG  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &trans
+&trans  &kp LC(A)  &kp LEFT    &kp DOWN_ARROW  &kp RIGHT             &kp LC(Y)                &trans           &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &trans
+&trans  &kp LC(Z)  &kp LC(X)   &kp LC(C)       &kp LC(V)             &trans                   &trans           &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &trans           &trans           &trans
+                               &trans          &trans                &trans                   &trans           &trans           &trans
             >;
         };
     };
