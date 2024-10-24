@@ -108,6 +108,20 @@
                 <&macro_release>,
                 <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
         };
+
+        password1: PASSWORD1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N1 &kp N3 &kp I &kp N4 &kp N3 &kp N1 &kp S &kp U &kp M &kp M &kp E &kp R &kp LS(R) &kp LS(O) &kp LS(S) &kp LS(E)>;
+            label = "PASSWORD1";
+        };
+
+        password2: password2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N1 &kp N3 &kp I &kp N4 &kp N3 &kp N1 &kp W &kp I &kp L &kp D &kp LS(L) &kp LS(O) &kp LS(V) &kp LS(E)>;
+            label = "PASSWORD2";
+        };
     };
 
     combos {
@@ -177,7 +191,7 @@
             bindings = <
 &trans       &kp ESCAPE    &kp DOLLAR    &kp UP        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
 &bootloader  &trans        &kp LEFT      &kp DOWN      &kp RIGHT             &tdlayer4                &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
-&trans       &tdblueclear  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2          &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
+&password1   &tdblueclear  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2          &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
                                          &trans        &trans                &trans                   &trans  &as N0  &kp KP_DOT
             >;
         };
