@@ -172,10 +172,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &as Q  &as W           &as E        &as R                  &as T          &as Y        &as U          &as I         &as O    &as P     &kp BSPC
-&kp LCTRL   &as A  &hm LEFT_ALT S  &as D        &as F                  &as G          &as H        &as J          &as K         &as L    &as SEMI  &tdbl
-&td0        &as Z  &as X           &as C        &as V                  &as B          &as N        &as M          &as COMMA     &as DOT  &as FSLH  &kp ESC
-                                   &tdshiftwin  &mt LEFT_CONTROL CAPS  &lt 1 SPACE    &lt 2 ENTER  &kp BACKSPACE  &tdaltlayer3
+&kp ESCAPE  &as Q    &as W           &as E        &as R                  &as T          &as Y        &as U          &as I         &as O    &as P     &kp BSPC
+&kp LCTRL   &lt 4 A  &hm LEFT_ALT S  &as D        &as F                  &as G          &as H        &as J          &as K         &as L    &as SEMI  &tdbl
+&td0        &as Z    &as X           &as C        &as V                  &as B          &as N        &as M          &as COMMA     &as DOT  &as FSLH  &kp ESC
+                                     &tdshiftwin  &mt LEFT_CONTROL CAPS  &lt 1 SPACE    &lt 2 ENTER  &kp BACKSPACE  &tdaltlayer3
             >;
         };
 
@@ -225,10 +225,10 @@
 
         layer_4 {
             bindings = <
-&trans  &kp MINUS     &kp EQUAL      &kp N7  &kp N8      &kp N9         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &tog 4        &kp PLUS       &kp N4  &kp N5      &kp N6         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp ASTERISK  &kp KP_DIVIDE  &kp N1  &kp N2      &kp N3         &trans  &trans  &trans  &trans  &trans  &trans
-                                     &kp N0  &kp KP_DOT  &lt 5 SPACE    &trans  &trans  &trans
+&trans  &kp MINUS     &kp EQUAL      &kp N7             &kp N8      &kp N9         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &tog 4        &kp PLUS       &kp N4             &kp N5      &kp N6         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp ASTERISK  &kp KP_DIVIDE  &kp N1             &kp N2      &kp N3         &trans  &trans  &trans  &trans  &trans  &trans
+                                     &hm LEFT_SHIFT N0  &kp KP_DOT  &lt 5 SPACE    &trans  &trans  &trans
             >;
 
             label = "Keypad-left";
