@@ -114,6 +114,7 @@
             #binding-cells = <0>;
             bindings = <&kp N1 &kp N3 &kp I &kp N4 &kp N3 &kp N1 &kp S &kp U &kp M &kp M &kp E &kp R &kp LS(R) &kp LS(O) &kp LS(S) &kp LS(E)>;
             label = "PASSWORD1";
+            wait-ms = <50>;
         };
 
         password2: password2 {
