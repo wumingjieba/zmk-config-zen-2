@@ -191,10 +191,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp PRINTSCREEN  &trans        &kp DOLLAR    &kp UP        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
-&bootloader      &trans        &kp LEFT      &kp DOWN      &kp RIGHT             &tdlayer4                &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
-&password1       &tdblueclear  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2          &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
-                                             &trans        &trans                &trans                   &trans  &as N0  &kp KP_DOT
+&trans       &kp LC(PRINTSCREEN)  &kp DOLLAR    &kp UP        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
+&bootloader  &trans               &kp LEFT      &kp DOWN      &kp RIGHT             &tdlayer4                &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
+&password1   &tdblueclear         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2          &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
+                                                &trans        &trans                &trans                   &trans  &as N0  &kp KP_DOT
             >;
         };
 
@@ -218,10 +218,10 @@
         layer_3 {
             display-name = "Fn&Num Symbol";
             bindings = <
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans    &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &trans  &trans           &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans    &kp DOLLAR       &kp PRCNT     &kp CARET             &trans  &kp PRINTSCREEN  &trans
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &kp EXCLAMATION  &kp AT_SIGN   &kp HASH              &trans  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                         &trans   &trans   &trans    &trans           &trans        &trans
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans          &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &trans  &trans           &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &out OUT_USB    &kp DOLLAR       &kp PRCNT     &kp CARET             &trans  &kp PRINTSCREEN  &trans
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &out OUT_BLE    &kp EXCLAMATION  &kp AT_SIGN   &kp HASH              &trans  &kp SCROLLLOCK   &kp PAUSE_BREAK
+                         &trans   &trans   &trans          &trans           &trans        &trans
             >;
         };
 
@@ -239,8 +239,8 @@
         layer_5 {
             bindings = <
 &trans  &trans     &kp DOLLAR  &kp UP          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &rgb_ug RGB_TOG  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &trans
-&trans  &kp LC(A)  &kp LEFT    &kp DOWN_ARROW  &kp RIGHT             &trans                   &out OUT_USB     &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &trans
-&trans  &kp LC(Z)  &kp LC(X)   &kp LC(C)       &kp LC(V)             &trans                   &out OUT_BLE     &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &trans           &trans           &trans
+&trans  &kp LC(A)  &kp LEFT    &kp DOWN_ARROW  &kp RIGHT             &trans                   &trans           &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &trans
+&trans  &kp LC(Z)  &kp LC(X)   &kp LC(C)       &kp LC(V)             &trans                   &trans           &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &trans           &trans           &trans
                                &trans          &trans                &trans                   &trans           &trans           &trans
             >;
         };
