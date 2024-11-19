@@ -114,7 +114,7 @@
             #binding-cells = <0>;
             bindings = <&kp N1 &kp N3 &kp I &kp N4 &kp N3 &kp N1 &kp S &kp U &kp M &kp M &kp E &kp R &kp LS(R) &kp LS(O) &kp LS(S) &kp LS(E)>;
             label = "PASSWORD1";
-            wait-ms = <50>;
+            wait-ms = <10>;
         };
 
         password2: password2 {
@@ -123,6 +123,14 @@
             bindings = <&kp N1 &kp N3 &kp I &kp N4 &kp N3 &kp N1 &kp W &kp I &kp L &kp D &kp LS(L) &kp LS(O) &kp LS(V) &kp LS(E)>;
             label = "PASSWORD2";
             wait-ms = <100>;
+        };
+
+        password3: password3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp N1 &kp N3 &kp I &kp N4 &kp N3 &kp N1 &kp LS(S) &kp LS(U) &kp LS(M) &kp LS(M) &kp LS(E) &kp LS(R) &kp R &kp O &kp S &kp E>;
+            label = "PASSWORD3";
+            wait-ms = <5>;
         };
     };
 
@@ -191,8 +199,8 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans       &kp LC(PRINTSCREEN)  &kp DOLLAR    &kp UP        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
-&bootloader  &trans               &kp LEFT      &kp DOWN      &kp RIGHT             &tdlayer4                &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
+&bootloader  &kp LC(PRINTSCREEN)  &kp DOLLAR    &kp UP        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
+&password3   &trans               &kp LEFT      &kp DOWN      &kp RIGHT             &tdlayer4                &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
 &password1   &tdblueclear         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2          &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
                                                 &trans        &trans                &trans                   &trans  &as N0  &kp KP_DOT
             >;
