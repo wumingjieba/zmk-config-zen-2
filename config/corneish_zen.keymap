@@ -81,6 +81,27 @@
             #binding-cells = <0>;
             bindings = <&trans>, <&bt BT_CLR>;
         };
+
+        tdbt2: tdbt2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDBT2";
+            #binding-cells = <0>;
+            bindings = <&trans>, <&bt BT_SEL 2>;
+        };
+
+        tdbt1: tdbt1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDBT1";
+            #binding-cells = <0>;
+            bindings = <&trans>, <&bt BT_SEL 1>;
+        };
+
+        tdbt0: tdbt0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDBT0";
+            #binding-cells = <0>;
+            bindings = <&trans>, <&bt BT_SEL 0>;
+        };
     };
 
     macros {
@@ -199,10 +220,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&bootloader  &kp LC(PRINTSCREEN)  &kp DOLLAR    &kp UP        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
-&password3   &trans               &kp LEFT      &kp DOWN      &kp RIGHT             &tdlayer4                &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
-&password1   &tdblueclear         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2          &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
-                                                &trans        &trans                &trans                   &trans  &as N0  &kp KP_DOT
+&bootloader  &kp PRINTSCREEN  &kp DOLLAR  &kp UP    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
+&password3   &trans           &kp LEFT    &kp DOWN  &kp RIGHT             &tdlayer4                &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
+&password1   &tdblueclear     &tdbt0      &tdbt1    &tdbt2                &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
+                                          &trans    &trans                &trans                   &trans  &as N0  &kp KP_DOT
             >;
         };
 
@@ -216,7 +237,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &as N1         &as N2             &as N3        &as N4            &as N5               &kp GRAVE        &kp TILDE  &kp UP    &as MINUS  &as EQUAL  &trans
+&trans  &as N1         &as N2             &as N3        &as N4            &as N5               &kp TILDE        &kp GRAVE  &kp UP    &as MINUS  &as EQUAL  &trans
 &trans  &kp SEMICOLON  &kp DOUBLE_QUOTES  &kp QUESTION  &as LEFT_BRACKET  &as RIGHT_BRACKET    &kp UNDERSCORE   &kp LEFT   &kp DOWN  &kp RIGHT  &kp HOME   &bootloader
 &trans  &kp COLON      &kp SQT            &kp SLASH     &kp BACKSLASH     &kp PIPE             &kp EXCLAMATION  &kp CARET  &kp LBRC  &kp RBRC   &kp END    &trans
                                           &trans        &trans            &trans               &trans           &trans     &trans
@@ -226,9 +247,9 @@
         layer_3 {
             display-name = "Fn&Num Symbol";
             bindings = <
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans          &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &trans  &trans           &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &out OUT_USB    &kp DOLLAR       &kp PRCNT     &kp CARET             &trans  &kp PRINTSCREEN  &trans
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &out OUT_BLE    &kp EXCLAMATION  &kp AT_SIGN   &kp HASH              &trans  &kp SCROLLLOCK   &kp PAUSE_BREAK
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans          &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &trans  &kp PRINTSCREEN  &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &out OUT_USB    &kp DOLLAR       &kp PRCNT     &kp CARET             &trans  &kp PAGE_UP      &trans
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &out OUT_BLE    &kp EXCLAMATION  &kp AT_SIGN   &kp HASH              &trans  &kp PAGE_DOWN    &kp PAUSE_BREAK
                          &trans   &trans   &trans          &trans           &trans        &trans
             >;
         };
