@@ -222,7 +222,7 @@
             bindings = <
 &bootloader  &kp PRINTSCREEN  &kp DOLLAR  &kp UP    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
 &password3   &trans           &kp LEFT    &kp DOWN  &kp RIGHT             &tdlayer4                &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
-&password1   &tdblueclear     &tdbt0      &tdbt1    &tdbt2                &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
+&password2   &tdblueclear     &tdbt0      &tdbt1    &tdbt2                &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
                                           &trans    &trans                &trans                   &trans  &as N0  &kp KP_DOT
             >;
         };
@@ -239,7 +239,7 @@
             bindings = <
 &trans  &as N1         &as N2             &as N3        &as N4            &as N5               &kp TILDE        &kp GRAVE  &kp UP    &as MINUS  &as EQUAL  &trans
 &trans  &kp SEMICOLON  &kp DOUBLE_QUOTES  &kp QUESTION  &as LEFT_BRACKET  &as RIGHT_BRACKET    &kp UNDERSCORE   &kp LEFT   &kp DOWN  &kp RIGHT  &kp HOME   &bootloader
-&trans  &kp COLON      &kp SQT            &kp SLASH     &kp BACKSLASH     &kp PIPE             &kp EXCLAMATION  &kp CARET  &kp LBRC  &kp RBRC   &kp END    &trans
+&trans  &kp COLON      &kp SQT            &kp SLASH     &kp BACKSLASH     &kp PIPE             &kp EXCLAMATION  &kp CARET  &kp LBRC  &kp RBRC   &kp END    &password1
                                           &trans        &trans            &trans               &trans           &trans     &trans
             >;
         };
