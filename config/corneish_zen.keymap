@@ -79,7 +79,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TDBLUECLEAR";
             #binding-cells = <0>;
-            bindings = <&trans>, <&bt BT_CLR>;
+            bindings = <&trans>, <&bt BT_CLR_ALL>;
         };
 
         tdbt2: tdbt2 {
