@@ -236,7 +236,7 @@
             bindings = <
 &tp_pw_bl   &kp PRINTSCREEN  &kp DOLLAR  &kp UP    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
 &password3  &trans           &kp LEFT    &kp DOWN  &kp RIGHT             &tdlayer4                &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
-&password1  &tdblueclear     &tdbt0      &tdbt1    &tdbt2                &trans                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
+&password1  &tdblueclear     &tdbt0      &tdbt1    &tdbt2                &tdbt3                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
                                          &trans    &trans                &trans                   &trans  &as N0  &kp KP_DOT
             >;
         };
