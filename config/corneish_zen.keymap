@@ -109,6 +109,13 @@
             #binding-cells = <0>;
             bindings = <&password2>, <&bootloader>;
         };
+
+        tdbt3: tdbt3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDBT3";
+            #binding-cells = <0>;
+            bindings = <&none>, <&bt BT_SEL 3>;
+        };
     };
 
     macros {
