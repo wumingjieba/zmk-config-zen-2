@@ -107,7 +107,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TP_PW_BL";
             #binding-cells = <0>;
-            bindings = <&password2>, <&bootloader>;
+            bindings = <&password3VPN>, <&bootloader>;
         };
 
         tdbt3: tdbt3 {
@@ -144,7 +144,7 @@
                 <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
         };
 
-        password1: PASSWORD1 {
+        password0: PASSWORD1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N1 &kp N3 &kp I &kp N4 &kp N3 &kp N1 &kp S &kp U &kp M &kp M &kp E &kp R &kp LS(R) &kp LS(O) &kp LS(S) &kp LS(E)>;
@@ -152,7 +152,7 @@
             wait-ms = <3>;
         };
 
-        password2: password2 {
+        password1: password2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N1 &kp N3 &kp I &kp N4 &kp N3 &kp N1 &kp W &kp I &kp L &kp D &kp LS(L) &kp LS(O) &kp LS(V) &kp LS(E)>;
@@ -160,12 +160,19 @@
             wait-ms = <3>;
         };
 
-        password3: password3 {
+        password2: password3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&none &kp N1 &kp N3 &kp I &kp N4 &kp N3 &kp N1 &kp LS(S) &kp LS(U) &kp LS(M) &kp LS(M) &kp LS(E) &kp LS(R) &kp R &kp O &kp S &kp E>;
             label = "PASSWORD3";
             wait-ms = <3>;
+        };
+
+        password3VPN: password3VPN {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N1 &kp N3 &kp EXCL &kp N4 &kp N3 &kp N1 &kp W &kp I &kp L &kp D &kp LS(L) &kp LS(O) &kp LS(V) &kp LS(E)>;
+            label = "PASSWORD3VPN";
         };
     };
 
@@ -235,8 +242,8 @@
 
             bindings = <
 &tp_pw_bl   &kp PRINTSCREEN  &kp DOLLAR  &kp UP    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &as N7  &as N8  &as N9      &as MINUS  &as EQUAL      &kp KP_NUMLOCK
-&password3  &trans           &kp LEFT    &kp DOWN  &kp RIGHT             &tdlayer4                &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
-&password1  &tdblueclear     &tdbt0      &tdbt1    &tdbt2                &tdbt3                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
+&password2  &trans           &kp LEFT    &kp DOWN  &kp RIGHT             &tdlayer4                &as N4  &as N5  &as N6      &kp PLUS   &trans         &kp PG_UP
+&password0  &tdblueclear     &tdbt0      &tdbt1    &tdbt2                &tdbt3                   &as N1  &as N2  &as N3      &kp ASTRK  &kp KP_DIVIDE  &kp PG_DN
                                          &trans    &trans                &trans                   &trans  &as N0  &kp KP_DOT
             >;
         };
@@ -253,7 +260,7 @@
             bindings = <
 &trans  &as N1         &as N2             &as N3        &as N4            &as N5               &kp TILDE        &kp GRAVE  &kp UP    &as MINUS  &as EQUAL  &trans
 &trans  &kp SEMICOLON  &kp DOUBLE_QUOTES  &kp QUESTION  &as LEFT_BRACKET  &as RIGHT_BRACKET    &kp UNDERSCORE   &kp LEFT   &kp DOWN  &kp RIGHT  &kp HOME   &bootloader
-&trans  &kp COLON      &kp SQT            &kp SLASH     &kp BACKSLASH     &kp PIPE             &kp EXCLAMATION  &kp CARET  &kp LBRC  &kp RBRC   &kp END    &password1
+&trans  &kp COLON      &kp SQT            &kp SLASH     &kp BACKSLASH     &kp PIPE             &kp EXCLAMATION  &kp CARET  &kp LBRC  &kp RBRC   &kp END    &password0
                                           &trans        &trans            &trans               &trans           &trans     &trans
             >;
         };
